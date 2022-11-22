@@ -27,7 +27,7 @@ public class LightUpImporter extends PuzzleImporter {
         for (int y = 0; y < rows; y++) {
             for (int x = 0; x < columns; x++) {
                 if (lightUpBoard.getCell(x, y) == null) {
-                    LightUpCell cell = new LightUpCell(-2, new Point(x, y));
+                    LightUpCell cell = new LightUpCell(LightUpCellType.UNKNOWN.toValue(), new Point(x, y));
                     cell.setIndex(y * columns + x);
                     cell.setModifiable(true);
                     lightUpBoard.setCell(x, y, cell);
@@ -79,7 +79,7 @@ public class LightUpImporter extends PuzzleImporter {
             for (int i = 0; i < elementDataList.getLength(); i++) {
                 LightUpCell cell = (LightUpCell) puzzle.getFactory().importCell(elementDataList.item(i), lightUpBoard);
                 Point loc = cell.getLocation();
-                if (cell.getData() != -2) {
+                if (cell.getData() != LightUpCellType.UNKNOWN.toValue()) {
                     cell.setModifiable(false);
                     cell.setGiven(true);
                 }
@@ -89,7 +89,7 @@ public class LightUpImporter extends PuzzleImporter {
             for (int y = 0; y < height; y++) {
                 for (int x = 0; x < width; x++) {
                     if (lightUpBoard.getCell(x, y) == null) {
-                        LightUpCell cell = new LightUpCell(-2, new Point(x, y));
+                        LightUpCell cell = new LightUpCell(LightUpCellType.UNKNOWN.toValue(), new Point(x, y));
                         cell.setIndex(y * height + x);
                         cell.setModifiable(true);
                         lightUpBoard.setCell(x, y, cell);
