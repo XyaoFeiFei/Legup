@@ -5,10 +5,22 @@ public enum LightUpCellType {
 
     public int value;
 
+    /**
+     * LightUpCellType constructor
+     *
+     * @param value
+     * @return none
+     */
     LightUpCellType(int value) {
         this.value = value;
     }
     
+    /**
+     * return this's type value
+     *
+     * @param none
+     * @return int
+     */
     public int toValue() {
         return this.value;
     }

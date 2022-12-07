@@ -7,6 +7,13 @@ import java.awt.event.MouseEvent;
 
 public class LightUpCellController extends ElementController {
     @Override
+    /**
+     * when user click, change the cell
+     *
+     * @param e the mouse event
+     * @param data the puzzle element
+     * @return none
+     */
     public void changeCell(MouseEvent e, PuzzleElement data) {
         LightUpCell cell = (LightUpCell) data;
         if (e.getButton() == MouseEvent.BUTTON1) {

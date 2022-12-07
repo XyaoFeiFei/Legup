@@ -9,6 +9,12 @@ import edu.rpi.legup.model.rules.ContradictionRule;
 @RegisterPuzzle
 public class LightUp extends Puzzle {
 
+    /**
+     * LightUp constructor
+     *
+     * @param none
+     * @return none
+     */
     public LightUp() {
         super();
         this.name = "LightUp";

@@ -28,6 +28,12 @@ public class LightUpView extends GridBoardView {
         }
     }
 
+    /**
+     * LightUpView Constructor
+     *
+     * @param board
+     * @return none
+     */
     public LightUpView(LightUpBoard board) {
         super(new BoardController(), new LightUpCellController(), board.getDimension());
 

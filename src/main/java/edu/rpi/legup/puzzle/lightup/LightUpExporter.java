@@ -6,11 +6,23 @@ import org.w3c.dom.Document;
 
 public class LightUpExporter extends PuzzleExporter {
 
+    /**
+     * LightUpExporter Constructor
+     *
+     * @param lightUp
+     * @return none
+     */
     public LightUpExporter(LightUp lightUp) {
         super(lightUp);
     }
 
     @Override
+    /**
+     * using the document to create board element
+     *
+     * @param newDocument
+     * @return elemwnt
+     */
     protected org.w3c.dom.Element createBoardElement(Document newDocument) {
         LightUpBoard board = (LightUpBoard) puzzle.getTree().getRootNode().getBoard();
 

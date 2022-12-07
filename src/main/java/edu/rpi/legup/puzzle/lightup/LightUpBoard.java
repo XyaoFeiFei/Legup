@@ -8,10 +8,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LightUpBoard extends GridBoard {
+    /**
+     * LightUpBoard constructor
+     *
+     * @param width the width of the board
+     * @param height the height of the board
+     * @return none
+     */
     public LightUpBoard(int width, int height) {
         super(width, height);
     }
 
+    /**
+     * LightUpBoard constructor
+     *
+     * @param size the size of the board
+     * @return none
+     */
     public LightUpBoard(int size) {
         super(size, size);
     }
@@ -66,7 +79,8 @@ public class LightUpBoard extends GridBoard {
 
     /**
      * Gets adjancent cells to the specified cell
-     * @param cell LightUpCell 
+     *
+     * @param cell LightUpCell
      * @return Set of adjacent LightUpCells
      */
     public Set<LightUpCell> getAdj(LightUpCell cell) {
@@ -95,6 +109,7 @@ public class LightUpBoard extends GridBoard {
 
     /**
      * Gets the number of adjacent cells of the specified type
+     *
      * @param cell base cell
      * @param type specified type
      * @return the number of adjacent cells
@@ -112,6 +127,7 @@ public class LightUpBoard extends GridBoard {
 
     /**
      * Gets the number of adjacent cells
+     *
      * @param cell LightUpCell
      * @return number of adjacent cells
      */
@@ -128,6 +144,7 @@ public class LightUpBoard extends GridBoard {
 
     /**
      * Gets the number of adjacent cells that are placable
+     *
      * @param cell specified cell
      * @return number of adjacent cells that are placable
      */
@@ -143,17 +160,36 @@ public class LightUpBoard extends GridBoard {
     }
 
     @Override
+    /**
+     * get the Cell at x and y
+     *
+     * @param x x pos of the cell
+     * @param y y pos of the cell
+     * @return LightUpCell
+     */
     public LightUpCell getCell(int x, int y) {
         return (LightUpCell) super.getCell(x, y);
     }
 
     @Override
+    /**
+     * notify change of the puzzle element
+     *
+     * @param puzzleElement
+     * @return none
+     */
     public void notifyChange(PuzzleElement puzzleElement) {
         super.notifyChange(puzzleElement);
         fillWithLight();
     }
 
     @Override
+    /**
+     * return a copy of this board
+     *
+     * @param none
+     * @return LightUpBoard
+     */
     public LightUpBoard copy() {
         LightUpBoard copy = new LightUpBoard(dimension.width, dimension.height);
         for (int x = 0; x < this.dimension.width; x++) {
@@ -161,9 +197,11 @@ public class LightUpBoard extends GridBoard {
                 copy.setCell(x, y, getCell(x, y).copy());
             }
         }
+        
         for (PuzzleElement e : modifiedData) {
             copy.getPuzzleElement(e).setModifiable(false);
         }
+        
         copy.fillWithLight();
         return copy;
     }

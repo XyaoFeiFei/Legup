@@ -12,6 +12,12 @@ public class LightUpElementView extends GridElementView {
     private static final Color WHITE_COLOR = new Color(0xF5F5F5);
     private static final Color GRAY_COLOR = new Color(0x9E9E9E);
 
+    /**
+     * LightUpElementView constructor
+     *
+     * @param cell
+     * @return none
+     */
     public LightUpElementView(LightUpCell cell) {
         super(cell);
     }
@@ -27,6 +33,12 @@ public class LightUpElementView extends GridElementView {
     }
 
     @Override
+    /**
+     * Draws the element
+     *
+     * @param graphics2D
+     * @return none
+     */
     public void drawElement(Graphics2D graphics2D) {
         LightUpCell cell = (LightUpCell) puzzleElement;
         LightUpCellType type = cell.getType();
